@@ -1,0 +1,57 @@
+.game-over-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(238, 228, 218, 0.73);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+  border-radius: 8px;
+  animation: fadeIn 0.5s ease;
+}
+
+.game-over-content {
+  text-align: center;
+}
+
+.game-over-title {
+  font-size: 2em;
+  color: #776e65;
+  margin-bottom: 12px;
+}
+
+.game-over-score {
+  font-size: 1.2em;
+  color: #776e65;
+  margin-bottom: 8px;
+}
+
+.game-over-high {
+  font-size: 1em;
+  color: #8f7a66;
+  margin-bottom: 20px;
+}
+
+.retry-btn {
+  background: #8f7a66;
+  color: #f9f6f2;
+  border: none;
+  border-radius: 6px;
+  padding: 12px 24px;
+  font-size: 1.1em;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.retry-btn:hover {
+  background: #9f8a76;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}

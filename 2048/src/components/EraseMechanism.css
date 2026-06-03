@@ -1,0 +1,27 @@
+.erase-mechanism {
+  display: flex;
+  justify-content: center;
+  margin-top: 12px;
+}
+
+.erase-btn {
+  background: #8f7a66;
+  color: #f9f6f2;
+  border: none;
+  border-radius: 6px;
+  padding: 10px 20px;
+  font-size: 1em;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.erase-btn:hover:not(:disabled) {
+  background: #9f8a76;
+}
+
+.erase-mechanism.disabled .erase-btn {
+  background: #bbada0;
+  cursor: not-allowed;
+  opacity: 0.6;
+}

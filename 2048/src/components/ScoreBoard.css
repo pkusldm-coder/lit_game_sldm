@@ -1,0 +1,36 @@
+.score-board {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  margin-bottom: 12px;
+}
+
+.score-panel {
+  background: #bbada0;
+  border-radius: 6px;
+  padding: 8px 20px;
+  text-align: center;
+  min-width: 100px;
+}
+
+.score-label {
+  font-size: 0.75em;
+  color: #eee4da;
+  font-weight: bold;
+}
+
+.score-value {
+  font-size: 1.5em;
+  color: #fff;
+  font-weight: bold;
+}
+
+.score-value.new-record {
+  color: #f65e3b;
+  animation: flash 0.5s ease;
+}
+
+@keyframes flash {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.2); }
+}
