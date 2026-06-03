@@ -1,0 +1,44 @@
+import { useNavigate } from 'react-router-dom'
+
+const GAMES = [
+  {
+    path: '/2048',
+    title: '2048',
+    desc: '经典数字合成游戏',
+    emoji: '🔢',
+    color: '#edc22e',
+  },
+  {
+    path: '/gomoku',
+    title: '五子棋',
+    desc: '15×15 棋盘，AI 对战',
+    emoji: '⚫',
+    color: '#f7971e',
+  },
+  {
+    path: '/sudoku',
+    title: '数独',
+    desc: '九宫格推理填空',
+    emoji: '🧩',
+    color: '#4caf50',
+  },
+]
+
+export default function Home() {
+  const navigate = useNavigate()
+  return (
+    <div className="hub-home">
+      <h1 className="hub-title">小游戏合集</h1>
+      <p className="hub-subtitle">选择一款游戏开始</p>
+      <div className="hub-cards">
+        {GAMES.map(g => (
+          <button key={g.path} className="hub-card" onClick={() => navigate(g.path)}>
+            <span className="hub-card-emoji">{g.emoji}</span>
+            <span className="hub-card-title">{g.title}</span>
+            <span className="hub-card-desc">{g.desc}</span>
+          </button>
+        ))}
+      </div>
+    </div>
+  )
+}
