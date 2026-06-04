@@ -1,0 +1,21 @@
+.lg-board {
+  display: grid;
+  gap: 6px;
+  width: 100%;
+  max-width: 460px;
+  padding: 6px;
+  background: #d4c4a8;
+  border-radius: 10px;
+}
+
+.lg-cell {
+  aspect-ratio: 1;
+}
+
+.lg-cell.empty {
+  background: transparent;
+}
+
+.lg-cell.path-highlight .lg-tile {
+  box-shadow: 0 0 0 3px #4caf50;
+}

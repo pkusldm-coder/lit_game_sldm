@@ -27,24 +27,26 @@
 }
 
 .hub-cards {
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
   gap: 16px;
   width: 100%;
-  max-width: 340px;
+  max-width: 400px;
 }
 
 .hub-card {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 6px;
-  padding: 24px;
+  justify-content: center;
+  gap: 8px;
+  padding: 20px 12px;
   border: 2px solid #333;
   border-radius: 16px;
   background: #222;
   cursor: pointer;
   transition: all 0.2s;
+  min-height: 130px;
 }
 
 .hub-card:hover, .hub-card:active {
