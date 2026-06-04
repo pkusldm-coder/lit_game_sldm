@@ -1,4 +1,4 @@
-import { useState, useCallback } from 'react'
+import { useState, useCallback, useEffect, useRef } from 'react'
 import type { GameState } from '../core/types'
 import { findPath } from '../core/pathfinder'
 import { generateBoard, removeTiles, shuffleBoard, resetIdCounter } from '../core/board'
@@ -32,12 +32,36 @@ function initState(level: number): GameState {
     won: false,
     path: null,
     animating: false,
+    timeLeft: config.timeLimit,
+    timeout: false,
   }
 }
 
 export function useGame() {
   const [state, setState] = useState<GameState>(() => initState(loadLevel()))
   const [shuffled, setShuffled] = useState(false)
+  const [showLevelSelect, setShowLevelSelect] = useState(false)
+  const tickRef = useRef<ReturnType<typeof setInterval> | null>(null)
+
+  useEffect(() => {
+    if (state.won || state.timeout || state.timeLeft <= 0) {
+      if (tickRef.current) clearInterval(tickRef.current)
+      return
+    }
+    tickRef.current = setInterval(() => {
+      setState(prev => {
+        if (prev.won || prev.timeout) return prev
+        const next = prev.timeLeft - 1
+        if (next <= 0) {
+          return { ...prev, timeLeft: 0, timeout: true }
+        }
+        return { ...prev, timeLeft: next }
+      })
+    }, 1000)
+    return () => {
+      if (tickRef.current) clearInterval(tickRef.current)
+    }
+  }, [state.won, state.timeout, state.timeLeft])
 
   const startNewGame = useCallback((level: number) => {
     setState(initState(level))
@@ -47,7 +71,7 @@ export function useGame() {
 
   const handleCellClick = useCallback((row: number, col: number) => {
     setState(prev => {
-      if (prev.won || prev.animating) return prev
+      if (prev.won || prev.animating || prev.timeout) return prev
 
       const tile = prev.board[row][col]
       if (!tile) return prev
@@ -85,6 +109,8 @@ export function useGame() {
         won,
         path,
         animating: false,
+        timeLeft: prev.timeLeft,
+        timeout: false,
       }
     })
   }, [])
@@ -96,7 +122,7 @@ export function useGame() {
 
   const handleShuffle = useCallback(() => {
     setState(prev => {
-      if (prev.won) return prev
+      if (prev.won || prev.timeout) return prev
       const newBoard = shuffleBoard(prev.board)
       return {
         ...prev,
@@ -108,12 +134,19 @@ export function useGame() {
     setShuffled(true)
   }, [])
 
+  const handleRetry = useCallback(() => {
+    startNewGame(state.level)
+  }, [state.level, startNewGame])
+
   return {
     state,
     shuffled,
+    showLevelSelect,
+    setShowLevelSelect,
     handleCellClick,
     nextLevel,
     handleShuffle,
     startNewGame,
+    handleRetry,
   }
 }

@@ -29,6 +29,7 @@ export interface LevelConfig {
   rows: number
   cols: number
   tileTypes: number
+  timeLimit: number
 }
 
 export interface GameState {
@@ -39,4 +40,6 @@ export interface GameState {
   won: boolean
   path: Path | null
   animating: boolean
+  timeLeft: number
+  timeout: boolean
 }

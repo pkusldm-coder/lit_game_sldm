@@ -30,9 +30,44 @@
   color: #5a4a3a;
 }
 
-.link-remain {
-  font-size: 13px;
+.link-timer {
+  font-size: 14px;
+  font-weight: 600;
   color: #8a7a6a;
+  font-variant-numeric: tabular-nums;
+  transition: color 0.3s;
+}
+
+.link-timer.time-warning {
+  color: #e74c3c;
+  animation: pulse 0.5s ease-in-out infinite alternate;
+}
+
+@keyframes pulse {
+  from { opacity: 1; }
+  to { opacity: 0.4; }
+}
+
+.link-header-actions {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.link-level-btn {
+  background: #8f7a66;
+  color: #f9f6f2;
+  border: none;
+  border-radius: 6px;
+  padding: 8px 10px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.2s;
+  line-height: 1;
+}
+
+.link-level-btn:hover {
+  background: #9f8a76;
 }
 
 .link-shuffle-btn {
@@ -40,10 +75,11 @@
   color: #f9f6f2;
   border: none;
   border-radius: 6px;
-  padding: 8px 14px;
-  font-size: 14px;
+  padding: 8px 10px;
+  font-size: 16px;
   cursor: pointer;
   transition: background 0.2s;
+  line-height: 1;
 }
 
 .link-shuffle-btn:hover:not(:disabled) {

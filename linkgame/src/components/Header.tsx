@@ -3,23 +3,35 @@ import './Header.css'
 
 interface HeaderProps {
   level: number
-  pairsRemaining: number
+  timeLeft: number
   onHome: () => void
   onShuffle: () => void
   shuffled: boolean
+  onLevelSelect: () => void
 }
 
-const Header: FC<HeaderProps> = ({ level, pairsRemaining, onHome, onShuffle, shuffled }) => {
+function formatTime(seconds: number): string {
+  const m = Math.floor(seconds / 60)
+  const s = seconds % 60
+  return `${m}:${s.toString().padStart(2, '0')}`
+}
+
+const Header: FC<HeaderProps> = ({ level, timeLeft, onHome, onShuffle, shuffled, onLevelSelect }) => {
+  const warning = timeLeft <= 10
+
   return (
     <div className="link-header">
       <button className="link-back" onClick={onHome}>← 返回</button>
       <div className="link-level-info">
         <span className="link-level">第 {level} 关</span>
-        <span className="link-remain">剩余 {pairsRemaining} 对</span>
+        <span className={`link-timer${warning ? ' time-warning' : ''}`}>
+          ⏱ {formatTime(timeLeft)}
+        </span>
       </div>
-      <button className="link-shuffle-btn" onClick={onShuffle} disabled={shuffled}>
-        🔀 重排
-      </button>
+      <div className="link-header-actions">
+        <button className="link-level-btn" onClick={onLevelSelect}>🎯</button>
+        <button className="link-shuffle-btn" onClick={onShuffle} disabled={shuffled}>🔀</button>
+      </div>
     </div>
   )
 }

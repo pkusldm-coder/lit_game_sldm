@@ -1,5 +1,4 @@
 import type { FC } from 'react'
-import type { DifficultyOption } from '../core/level'
 import { getDifficultyOptions } from '../core/level'
 import './LevelSelect.css'
 

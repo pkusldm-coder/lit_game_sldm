@@ -2,19 +2,22 @@ import { useGame } from './hooks/useGame'
 import Header from './components/Header'
 import GameBoard from './components/GameBoard'
 import WinOverlay from './components/WinOverlay'
+import LevelSelect from './components/LevelSelect'
+import TimeoutOverlay from './components/TimeoutOverlay'
 import './App.css'
 
 function App() {
-  const { state, shuffled, handleCellClick, nextLevel, handleShuffle, startNewGame } = useGame()
+  const { state, shuffled, showLevelSelect, setShowLevelSelect, handleCellClick, nextLevel, handleShuffle, startNewGame, handleRetry } = useGame()
 
   return (
     <div className="link-app">
       <Header
         level={state.level}
-        pairsRemaining={state.pairsRemaining}
+        timeLeft={state.timeLeft}
         onHome={() => startNewGame(1)}
         onShuffle={handleShuffle}
         shuffled={shuffled}
+        onLevelSelect={() => setShowLevelSelect(true)}
       />
       <GameBoard
         board={state.board}
@@ -26,6 +29,21 @@ function App() {
         <WinOverlay
           level={state.level}
           onNextLevel={nextLevel}
+        />
+      )}
+      {state.timeout && (
+        <TimeoutOverlay
+          level={state.level}
+          onRetry={handleRetry}
+        />
+      )}
+      {showLevelSelect && (
+        <LevelSelect
+          onSelect={(level) => {
+            startNewGame(level)
+            setShowLevelSelect(false)
+          }}
+          onClose={() => setShowLevelSelect(false)}
         />
       )}
     </div>
