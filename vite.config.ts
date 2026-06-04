@@ -12,6 +12,9 @@ export default defineConfig({
       '@linkgame': path.resolve(__dirname, 'linkgame/src'),
       '@matchgame': path.resolve(__dirname, 'matchgame/src'),
       '@klotski': path.resolve(__dirname, 'klotski/src'),
+      '@flowgame': path.resolve(__dirname, 'flowgame/src'),
+      '@nonogram': path.resolve(__dirname, 'nonogram/src'),
     },
+    dedupe: ['react', 'react-dom'],
   },
 })

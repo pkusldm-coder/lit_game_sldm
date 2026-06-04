@@ -158,14 +158,20 @@ export function useGame() {
         return { ...prev, selected: { row, col } }
       }
 
-      processCascade(swapped, prev.score, prev.movesLeft)
-
       return {
         ...prev,
         board: swapped,
         selected: null,
         animating: true,
       }
+    })
+
+    // after state commit, start cascade
+    setState(prev => {
+      if (prev.animating) {
+        processCascade(prev.board, prev.score, prev.movesLeft)
+      }
+      return prev
     })
   }, [processCascade])
 

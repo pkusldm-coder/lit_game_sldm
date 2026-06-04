@@ -1,9 +1,9 @@
 import { useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
-import AppKlotski from '@klotski/App'
+import AppFlow from '@flowgame/App'
 import ErrorBoundary from '../components/ErrorBoundary'
 
-export default function GameKlotski() {
+export default function GameFlow() {
   const navigate = useNavigate()
 
   useEffect(() => {
@@ -27,10 +27,10 @@ export default function GameKlotski() {
   }, [])
 
   return (
-    <div className="klotski">
+    <div className="flowgame">
       <button className="hub-back" onClick={() => navigate('/')}>← 返回</button>
       <ErrorBoundary>
-        <AppKlotski />
+        <AppFlow />
       </ErrorBoundary>
     </div>
   )

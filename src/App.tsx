@@ -6,6 +6,8 @@ import GameSudoku from './pages/GameSudoku'
 import GameLink from './pages/GameLink'
 import GameMatch from './pages/GameMatch'
 import GameKlotski from './pages/GameKlotski'
+import GameFlow from './pages/GameFlow'
+import GameNonogram from './pages/GameNonogram'
 import './App.css'
 
 export default function App() {
@@ -18,6 +20,8 @@ export default function App() {
       <Route path="/linkgame" element={<GameLink />} />
       <Route path="/matchgame" element={<GameMatch />} />
       <Route path="/klotski" element={<GameKlotski />} />
+      <Route path="/flowgame" element={<GameFlow />} />
+      <Route path="/nonogram" element={<GameNonogram />} />
     </Routes>
   )
 }

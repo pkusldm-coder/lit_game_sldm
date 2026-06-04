@@ -29,7 +29,9 @@
       "@sudoku/*": ["./sudoku/src/*"],
       "@linkgame/*": ["./linkgame/src/*"],
       "@matchgame/*": ["./matchgame/src/*"],
-      "@klotski/*": ["./klotski/src/*"]
+      "@klotski/*": ["./klotski/src/*"],
+      "@flowgame/*": ["./flowgame/src/*"],
+      "@nonogram/*": ["./nonogram/src/*"]
     }
   },
   "include": ["src"]

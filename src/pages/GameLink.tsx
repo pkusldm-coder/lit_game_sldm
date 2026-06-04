@@ -1,6 +1,7 @@
 import { useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
 import AppLink from '@linkgame/App'
+import ErrorBoundary from '../components/ErrorBoundary'
 
 export default function GameLink() {
   const navigate = useNavigate()
@@ -28,7 +29,9 @@ export default function GameLink() {
   return (
     <div className="linkgame">
       <button className="hub-back" onClick={() => navigate('/')}>← 返回</button>
-      <AppLink />
+      <ErrorBoundary>
+        <AppLink />
+      </ErrorBoundary>
     </div>
   )
 }

@@ -43,6 +43,20 @@ const GAMES = [
     emoji: '🎴',
     color: '#e74c3c',
   },
+  {
+    path: '/flowgame',
+    title: '数连',
+    desc: '连接同色点，填满格子',
+    emoji: '🌈',
+    color: '#9b59b6',
+  },
+  {
+    path: '/nonogram',
+    title: '数织',
+    desc: '根据线索还原图案',
+    emoji: '🖼️',
+    color: '#2c3e50',
+  },
 ]
 
 export default function Home() {

@@ -91,7 +91,7 @@
 }
 
 /* === Game wrapper isolation === */
-.g2048, .gomoku, .sudoku, .linkgame, .matchgame, .klotski {
+.g2048, .gomoku, .sudoku, .linkgame, .matchgame, .klotski, .flowgame, .nonogram {
   width: 100%;
 }
 

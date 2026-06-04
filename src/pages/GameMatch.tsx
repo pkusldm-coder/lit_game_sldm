@@ -1,7 +1,11 @@
 import { useEffect } from 'react'
+import { useNavigate } from 'react-router-dom'
 import AppMatch from '@matchgame/App'
+import ErrorBoundary from '../components/ErrorBoundary'
 
 export default function GameMatch() {
+  const navigate = useNavigate()
+
   useEffect(() => {
     const prevBg = document.body.style.background
     const prevColor = document.body.style.color
@@ -24,7 +28,10 @@ export default function GameMatch() {
 
   return (
     <div className="matchgame">
-      <AppMatch />
+      <button className="hub-back" onClick={() => navigate('/')}>← 返回</button>
+      <ErrorBoundary>
+        <AppMatch />
+      </ErrorBoundary>
     </div>
   )
 }

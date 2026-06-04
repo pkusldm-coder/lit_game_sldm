@@ -6,34 +6,95 @@
   max-width: 350px;
 }
 
+.kl-grid-container {
+  position: relative;
+  width: 100%;
+}
+
 .kl-grid {
   display: grid;
   gap: 4px;
   width: 100%;
-  padding: 4px;
+  padding: 10px;
   background: #d4c4a8;
   border-radius: 10px;
   aspect-ratio: 5 / 4;
+  position: relative;
+}
+
+/* frame: top, left, right full; bottom only at outer edges */
+.kl-grid::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border: 3px solid #5a4a3a;
+  border-bottom: none;
+  border-radius: 12px 12px 0 0;
+  pointer-events: none;
+}
+
+.kl-frame-l {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 30%;
+  height: 3px;
+  background: #5a4a3a;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.kl-frame-r {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 30%;
+  height: 3px;
+  background: #5a4a3a;
+  z-index: 1;
+  pointer-events: none;
 }
 
 .kl-exit {
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: center;
-  gap: 6px;
-  margin-top: 6px;
+  gap: 2px;
+  margin-top: -2px;
+  position: relative;
+  z-index: 2;
+}
+
+.kl-exit-arrows {
+  display: flex;
+  justify-content: space-between;
   width: 40%;
+  align-items: center;
+}
+
+.kl-exit-arrow {
+  font-size: 22px;
+  color: #e74c3c;
+  font-weight: 700;
+  line-height: 1;
+  animation: kl-bounce-down 1.2s ease-in-out infinite;
+}
+
+.kl-exit-arrow:nth-child(2) {
+  animation-delay: 0.15s;
+}
+
+@keyframes kl-bounce-down {
+  0%, 100% { transform: translateY(0); opacity: 0.4; }
+  50% { transform: translateY(4px); opacity: 1; }
 }
 
 .kl-exit-label {
-  font-size: 13px;
+  font-size: 12px;
   font-weight: 700;
-  color: #8a7a6a;
-}
-
-.kl-exit-gap {
-  flex: 1;
-  height: 8px;
-  background: #5a4a3a;
-  border-radius: 0 0 4px 4px;
+  color: #e74c3c;
+  letter-spacing: 2px;
 }
