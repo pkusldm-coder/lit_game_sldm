@@ -1,0 +1,76 @@
+.fg-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 420px;
+  padding: 8px 4px 8px 72px;
+  gap: 8px;
+}
+
+.fg-header-left {
+  min-width: 60px;
+}
+
+.fg-level {
+  font-size: 18px;
+  font-weight: 700;
+  color: #5a4a3a;
+}
+
+.fg-header-center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+}
+
+.fg-moves {
+  font-size: 14px;
+  color: #8a7a6a;
+}
+
+.fg-header-right {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.fg-rules-btn {
+  background: #8f7a66;
+  color: #f9f6f2;
+  border: none;
+  border-radius: 6px;
+  width: 32px;
+  height: 32px;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.2s;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.fg-rules-btn:hover {
+  background: #9f8a76;
+}
+
+.fg-reset-btn,
+.fg-level-btn {
+  background: #8f7a66;
+  color: #f9f6f2;
+  border: none;
+  border-radius: 6px;
+  padding: 8px 10px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background 0.2s;
+  line-height: 1;
+}
+
+.fg-reset-btn:hover,
+.fg-level-btn:hover {
+  background: #9f8a76;
+}

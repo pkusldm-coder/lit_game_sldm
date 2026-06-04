@@ -1,0 +1,59 @@
+.mg-win-overlay {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.7);
+  z-index: 100;
+  animation: fadeIn 0.3s ease;
+}
+
+.mg-win-card {
+  background: #f5f0e8;
+  border-radius: 16px;
+  padding: 32px;
+  text-align: center;
+  min-width: 260px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.mg-win-card h2 {
+  font-size: 28px;
+  color: #5a4a3a;
+  margin: 0;
+}
+
+.mg-win-card p {
+  font-size: 15px;
+  color: #8a7a6a;
+}
+
+.mg-win-score {
+  font-weight: 700;
+  color: #f65e3b;
+}
+
+.mg-next-btn {
+  background: #f65e3b;
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  padding: 14px 32px;
+  font-size: 17px;
+  font-weight: 700;
+  cursor: pointer;
+  margin-top: 12px;
+  transition: background 0.2s;
+}
+
+.mg-next-btn:hover {
+  background: #e74c3c;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}

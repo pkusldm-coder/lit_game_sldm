@@ -1,0 +1,104 @@
+.fg-level-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+  animation: fg-fadeIn 0.2s;
+}
+
+@keyframes fg-fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.fg-level-panel {
+  background: #f5f0e8;
+  border-radius: 16px;
+  padding: 24px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  min-width: 300px;
+  max-height: 80vh;
+}
+
+.fg-level-panel h2 {
+  color: #5a4a3a;
+  margin: 0;
+  font-size: 20px;
+}
+
+.fg-level-list {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  overflow-y: auto;
+}
+
+.fg-level-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 12px;
+  background: #fff;
+  border: 2px solid #ccc;
+  border-radius: 10px;
+  cursor: pointer;
+  text-align: left;
+  transition: transform 0.15s, box-shadow 0.15s;
+}
+
+.fg-level-item:hover {
+  transform: scale(1.02);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+}
+
+.fg-level-item.active {
+  background: #fef0ea;
+  border-color: #f65e3b;
+}
+
+.fg-level-item-num {
+  color: #5a4a3a;
+  min-width: 24px;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.fg-level-item-name {
+  color: #5a4a3a;
+  flex: 1;
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.fg-level-item-size {
+  color: #8a7a6a;
+  font-size: 12px;
+}
+
+.fg-level-item-diff {
+  color: #aaa;
+  font-size: 12px;
+  min-width: 36px;
+  text-align: right;
+}
+
+.fg-level-close {
+  background: #8f7a66;
+  color: #f9f6f2;
+  border: none;
+  border-radius: 8px;
+  padding: 10px;
+  font-size: 15px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.fg-level-close:hover {
+  background: #9f8a76;
+}
