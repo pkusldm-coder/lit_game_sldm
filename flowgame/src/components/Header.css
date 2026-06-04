@@ -36,6 +36,27 @@
   gap: 6px;
 }
 
+.fg-rules-btn {
+  background: #8f7a66;
+  color: #f9f6f2;
+  border: none;
+  border-radius: 6px;
+  width: 32px;
+  height: 32px;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.2s;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.fg-rules-btn:hover {
+  background: #9f8a76;
+}
+
 .fg-reset-btn,
 .fg-level-btn {
   background: #8f7a66;

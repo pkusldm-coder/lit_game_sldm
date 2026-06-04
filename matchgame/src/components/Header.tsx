@@ -7,9 +7,10 @@ interface HeaderProps {
   targetScore: number
   movesLeft: number
   onLevelSelect: () => void
+  onRules: () => void
 }
 
-const Header: FC<HeaderProps> = ({ level, score, targetScore, movesLeft, onLevelSelect }) => {
+const Header: FC<HeaderProps> = ({ level, score, targetScore, movesLeft, onLevelSelect, onRules }) => {
   return (
     <div className="mg-header">
       <div className="mg-header-left">
@@ -20,6 +21,7 @@ const Header: FC<HeaderProps> = ({ level, score, targetScore, movesLeft, onLevel
         <span className="mg-moves">步数: {movesLeft}</span>
       </div>
       <div className="mg-header-right">
+        <button className="mg-rules-btn" onClick={onRules}>?</button>
         <button className="mg-level-btn" onClick={onLevelSelect}>🎯</button>
       </div>
     </div>
