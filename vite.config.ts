@@ -10,6 +10,7 @@ export default defineConfig({
       '@gomoku': path.resolve(__dirname, 'gomoku/src'),
       '@sudoku': path.resolve(__dirname, 'sudoku/src'),
       '@linkgame': path.resolve(__dirname, 'linkgame/src'),
+      '@matchgame': path.resolve(__dirname, 'matchgame/src'),
     },
   },
 })

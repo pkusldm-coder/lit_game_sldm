@@ -1,0 +1,16 @@
+.mg-board {
+  display: grid;
+  gap: 4px;
+  width: 100%;
+  max-width: 420px;
+  padding: 4px;
+  background: #d4c4a8;
+  border-radius: 10px;
+}
+
+.mg-cell {
+  aspect-ratio: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

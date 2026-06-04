@@ -4,6 +4,7 @@ import Game2048 from './pages/Game2048'
 import GameGomoku from './pages/GameGomoku'
 import GameSudoku from './pages/GameSudoku'
 import GameLink from './pages/GameLink'
+import GameMatch from './pages/GameMatch'
 import './App.css'
 
 export default function App() {
@@ -14,6 +15,7 @@ export default function App() {
       <Route path="/gomoku" element={<GameGomoku />} />
       <Route path="/sudoku" element={<GameSudoku />} />
       <Route path="/linkgame" element={<GameLink />} />
+      <Route path="/matchgame" element={<GameMatch />} />
     </Routes>
   )
 }

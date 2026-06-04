@@ -27,7 +27,8 @@
       "@game2048/*": ["./2048/src/*"],
       "@gomoku/*": ["./gomoku/src/*"],
       "@sudoku/*": ["./sudoku/src/*"],
-      "@linkgame/*": ["./linkgame/src/*"]
+      "@linkgame/*": ["./linkgame/src/*"],
+      "@matchgame/*": ["./matchgame/src/*"]
     }
   },
   "include": ["src"]

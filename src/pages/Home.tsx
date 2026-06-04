@@ -29,6 +29,13 @@ const GAMES = [
     emoji: '🔗',
     color: '#e74c3c',
   },
+  {
+    path: '/matchgame',
+    title: '消消乐',
+    desc: '3连消除，高分过关',
+    emoji: '🍎',
+    color: '#f39c12',
+  },
 ]
 
 export default function Home() {

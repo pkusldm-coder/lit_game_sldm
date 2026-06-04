@@ -1,0 +1,33 @@
+.mg-tile {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f5f0e8;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform 0.12s, box-shadow 0.12s;
+  user-select: none;
+  -webkit-user-select: none;
+  width: 100%;
+  height: 100%;
+}
+
+.mg-tile:hover {
+  transform: scale(1.06);
+}
+
+.mg-tile:active {
+  transform: scale(0.94);
+}
+
+.mg-tile.selected {
+  box-shadow: inset 0 0 0 3px #f65e3b;
+  transform: scale(1.1);
+  z-index: 2;
+}
+
+.mg-tile-fruit {
+  font-size: clamp(20px, 4.5vmin, 32px);
+  line-height: 1;
+  pointer-events: none;
+}
