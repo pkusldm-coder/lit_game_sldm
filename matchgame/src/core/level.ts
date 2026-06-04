@@ -7,20 +7,20 @@ export function getLevelConfig(level: number): LevelConfig {
 
   if (level <= 5) {
     tileTypes = 5
-    targetScore = 500
-    maxMoves = 25
+    targetScore = 2500
+    maxMoves = 20
   } else if (level <= 10) {
     tileTypes = 6
-    targetScore = 800
-    maxMoves = 22
+    targetScore = 3500
+    maxMoves = 18
   } else if (level <= 15) {
     tileTypes = 7
-    targetScore = 1200
-    maxMoves = 20
+    targetScore = 5000
+    maxMoves = 16
   } else {
     tileTypes = 8
-    targetScore = 1500
-    maxMoves = 20
+    targetScore = 6500
+    maxMoves = 16
   }
 
   return {
