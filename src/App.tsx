@@ -5,6 +5,7 @@ import GameGomoku from './pages/GameGomoku'
 import GameSudoku from './pages/GameSudoku'
 import GameLink from './pages/GameLink'
 import GameMatch from './pages/GameMatch'
+import GameKlotski from './pages/GameKlotski'
 import './App.css'
 
 export default function App() {
@@ -16,6 +17,7 @@ export default function App() {
       <Route path="/sudoku" element={<GameSudoku />} />
       <Route path="/linkgame" element={<GameLink />} />
       <Route path="/matchgame" element={<GameMatch />} />
+      <Route path="/klotski" element={<GameKlotski />} />
     </Routes>
   )
 }

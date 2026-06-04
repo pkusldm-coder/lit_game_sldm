@@ -11,6 +11,7 @@ export default defineConfig({
       '@sudoku': path.resolve(__dirname, 'sudoku/src'),
       '@linkgame': path.resolve(__dirname, 'linkgame/src'),
       '@matchgame': path.resolve(__dirname, 'matchgame/src'),
+      '@klotski': path.resolve(__dirname, 'klotski/src'),
     },
   },
 })

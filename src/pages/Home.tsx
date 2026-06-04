@@ -36,6 +36,13 @@ const GAMES = [
     emoji: '🍎',
     color: '#f39c12',
   },
+  {
+    path: '/klotski',
+    title: '华容道',
+    desc: '滑块移出曹操',
+    emoji: '🎴',
+    color: '#e74c3c',
+  },
 ]
 
 export default function Home() {

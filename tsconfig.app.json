@@ -28,7 +28,8 @@
       "@gomoku/*": ["./gomoku/src/*"],
       "@sudoku/*": ["./sudoku/src/*"],
       "@linkgame/*": ["./linkgame/src/*"],
-      "@matchgame/*": ["./matchgame/src/*"]
+      "@matchgame/*": ["./matchgame/src/*"],
+      "@klotski/*": ["./klotski/src/*"]
     }
   },
   "include": ["src"]

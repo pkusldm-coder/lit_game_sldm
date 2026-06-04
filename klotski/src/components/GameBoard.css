@@ -1,0 +1,39 @@
+.kl-board {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 350px;
+}
+
+.kl-grid {
+  display: grid;
+  gap: 4px;
+  width: 100%;
+  padding: 4px;
+  background: #d4c4a8;
+  border-radius: 10px;
+  aspect-ratio: 5 / 4;
+}
+
+.kl-exit {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  margin-top: 6px;
+  width: 40%;
+}
+
+.kl-exit-label {
+  font-size: 13px;
+  font-weight: 700;
+  color: #8a7a6a;
+}
+
+.kl-exit-gap {
+  flex: 1;
+  height: 8px;
+  background: #5a4a3a;
+  border-radius: 0 0 4px 4px;
+}
