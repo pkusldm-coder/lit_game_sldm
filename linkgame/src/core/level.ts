@@ -14,7 +14,7 @@ export function getLevelConfig(level: number): LevelConfig {
     timeLimit = 60
   } else {
     tileTypes = 24
-    timeLimit = 45
+    timeLimit = 60
   }
   return {
     level,
