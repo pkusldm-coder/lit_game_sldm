@@ -5,6 +5,8 @@
   align-items: center;
   justify-content: center;
   min-height: 100dvh;
+  max-width: 500px;
+  margin: 0 auto;
   padding: 24px;
   gap: 32px;
 }
@@ -89,4 +91,8 @@
 /* === Game wrapper isolation === */
 .g2048, .gomoku, .sudoku {
   width: 100%;
+}
+
+.g2048 {
+  min-height: 100dvh;
 }
