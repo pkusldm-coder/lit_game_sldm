@@ -9,6 +9,7 @@ export default defineConfig({
       '@game2048': path.resolve(__dirname, '2048/src'),
       '@gomoku': path.resolve(__dirname, 'gomoku/src'),
       '@sudoku': path.resolve(__dirname, 'sudoku/src'),
+      '@linkgame': path.resolve(__dirname, 'linkgame/src'),
     },
   },
 })

@@ -3,6 +3,7 @@ import Home from './pages/Home'
 import Game2048 from './pages/Game2048'
 import GameGomoku from './pages/GameGomoku'
 import GameSudoku from './pages/GameSudoku'
+import GameLink from './pages/GameLink'
 import './App.css'
 
 export default function App() {
@@ -12,6 +13,7 @@ export default function App() {
       <Route path="/2048" element={<Game2048 />} />
       <Route path="/gomoku" element={<GameGomoku />} />
       <Route path="/sudoku" element={<GameSudoku />} />
+      <Route path="/linkgame" element={<GameLink />} />
     </Routes>
   )
 }

@@ -26,7 +26,8 @@
     "paths": {
       "@game2048/*": ["./2048/src/*"],
       "@gomoku/*": ["./gomoku/src/*"],
-      "@sudoku/*": ["./sudoku/src/*"]
+      "@sudoku/*": ["./sudoku/src/*"],
+      "@linkgame/*": ["./linkgame/src/*"]
     }
   },
   "include": ["src"]

@@ -22,6 +22,13 @@ const GAMES = [
     emoji: '🧩',
     color: '#4caf50',
   },
+  {
+    path: '/linkgame',
+    title: '连连看',
+    desc: '过关模式，配对消除',
+    emoji: '🔗',
+    color: '#e74c3c',
+  },
 ]
 
 export default function Home() {
