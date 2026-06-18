@@ -90,9 +90,63 @@
   background: rgba(0,0,0,0.8);
 }
 
-/* === Game wrapper isolation === */
-.g2048, .gomoku, .sudoku, .linkgame, .matchgame, .klotski, .flowgame, .nonogram {
+.g2048, .gomoku, .sudoku, .linkgame, .matchgame, .klotski, .flowgame, .nonogram, .tetris, .jungle, .ludo, .checkers, .go-game, .chess, .junqi, .wordgame {
   width: 100%;
+  padding-top: 44px;
+}
+
+.hub-back:hover {
+  background: rgba(0,0,0,0.8);
+}
+
+/* === Main dual-entry === */
+.hub-sections {
+  display: flex; flex-direction: column; gap: 24px; width: 100%; max-width: 420px;
+}
+.hub-section-btn {
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  gap: 8px; padding: 28px 16px;
+  border: 2px solid #333; border-radius: 18px; background: #222;
+  cursor: pointer; transition: all 0.2s; min-height: 120px;
+}
+.hub-section-btn:active { border-color: #f7971e; background: #2a2a3e; }
+.hub-section-icon { font-size: 48px; }
+.hub-section-title { font-size: 26px; font-weight: 700; color: #eee; }
+.hub-section-desc { font-size: 14px; color: #888; }
+
+/* === Word game sub-home === */
+.wg-home {
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  min-height: 100dvh; padding: 24px; gap: 24px;
+}
+.wg-home-title { font-size: 32px; font-weight: 800; color: #f7971e; }
+.wg-home-sub { font-size: 14px; color: #777; margin-top: -16px; }
+.wg-home-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; width: 100%; max-width: 320px; }
+.wg-home-card {
+  height: 140px;
+  background: #16213e; border-radius: 14px; border: 2px solid #3a4a6e;
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  gap: 8px; cursor: pointer; transition: all 0.15s; color: #eee;
+}
+.wg-home-card:active { border-color: #f7971e; background: #1a2a4e; }
+.wg-home-icon { width: 52px; height: 52px; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 24px; color: #fff; font-weight: bold; }
+.wg-home-name { font-size: 18px; font-weight: bold; }
+.wg-home-desc { font-size: 11px; color: #888; }
+
+/* === Shared wordgame bar === */
+.wg-bar { width: 100%; display: flex; align-items: center; gap: 8px; padding: 4px 0; }
+.wg-bar-btn { background: #3a4a6e; border: none; color: #eee; padding: 6px 14px; border-radius: 8px; font-size: 14px; cursor: pointer; white-space: nowrap; }
+.wg-bar-btn:active { background: #4a5a8e; }
+
+/* === Game wrapper isolation === */
+.g2048, .gomoku, .sudoku, .linkgame, .matchgame, .klotski, .flowgame, .nonogram, .tetris, .jungle, .ludo, .checkers, .go-game, .chess, .junqi {
+  width: 100%;
+}
+
+.junqi {
+  height: 100dvh;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
 }
 
 .g2048 {
@@ -155,3 +209,216 @@
 .g2048 .diff-btn.active {
   background: #f65e3b;
 }
+
+/* === 猜字谜 styles === */
+.cz-app {
+  display: flex; flex-direction: column; align-items: center;
+  height: 100dvh; padding: 16px; max-width: 420px; margin: 0 auto; position: relative;
+}
+.cz-header { width: 100%; margin-bottom: 16px; }
+.cz-title { font-size: 22px; font-weight: 800; color: #f7971e; text-align: center; }
+.cz-progress { width: 100%; height: 6px; background: #16213e; border-radius: 3px; overflow: hidden; margin: 8px 0; }
+.cz-progress-bar { height: 100%; background: #f7971e; border-radius: 3px; transition: width 0.3s; }
+.cz-stat-row { display: flex; justify-content: space-between; font-size: 13px; color: #888; }
+.cz-diff { background: #16213e; padding: 1px 10px; border-radius: 8px; }
+.cz-score { color: #0ff; font-weight: bold; }
+.cz-hint {
+  width: 100%; padding: 32px 16px; margin-bottom: 24px;
+  font-size: 28px; text-align: center; color: #ddd;
+  background: #16213e; border-radius: 14px; line-height: 1.6;
+  font-family: 'STKaiti','KaiTi','楷体',serif; letter-spacing: 2px;
+}
+.cz-options { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; width: 100%; max-width: 320px; }
+.cz-opt {
+  height: 80px; font-size: 36px; font-family: 'STKaiti','KaiTi','楷体',serif;
+  border: 2px solid #3a4a6e; border-radius: 12px; background: #0d1a2e; color: #eee;
+  cursor: pointer; display: flex; align-items: center; justify-content: center; transition: all 0.15s;
+}
+.cz-opt:active { background: #1a2a4e; border-color: #f7971e; }
+.cz-opt-correct { background: #0a3a1e; border-color: #0f0; color: #0f0; }
+.cz-opt-wrong { background: #3a0a0a; border-color: #f00; color: #f00; }
+.cz-opt-dim { opacity: 0.4; }
+.cz-explain {
+  margin-top: 14px; padding: 12px 16px; width: 100%; max-width: 320px;
+  background: #16213e; border-radius: 10px; font-size: 14px; color: #aaa; line-height: 1.6; text-align: center; min-height: 60px;
+}
+.cz-result {
+  display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 16px; height: 100dvh; text-align: center;
+}
+.cz-result-title { font-size: 28px; font-weight: bold; color: #f7971e; }
+.cz-result-score { font-size: 48px; font-weight: 800; color: #0ff; }
+.cz-result-bar-wrap { width: 80%; height: 10px; background: #16213e; border-radius: 5px; overflow: hidden; }
+.cz-result-bar { height: 100%; background: #f7971e; border-radius: 5px; transition: width 0.5s; }
+.cz-result-msg { font-size: 18px; color: #aaa; }
+.cz-btn { padding: 12px 32px; border: none; border-radius: 10px; font-size: 16px; cursor: pointer; font-weight: bold; margin-top: 8px; }
+.cz-btn-primary { background: #f7971e; color: #000; }
+.cz-btn-primary:active { background: #e08900; }
+
+/* === 猜灯谜 styles === */
+.dm-app {
+  display: flex; flex-direction: column; align-items: center;
+  height: 100dvh; padding: 12px; max-width: 420px; margin: 0 auto; position: relative;
+}
+.dm-header { width: 100%; margin-bottom: 12px; }
+.dm-title { font-size: 22px; font-weight: 800; color: #f44; text-align: center; }
+.dm-progress { width: 100%; height: 6px; background: #2a1010; border-radius: 3px; overflow: hidden; margin: 8px 0; }
+.dm-progress-bar { height: 100%; background: linear-gradient(90deg,#f44,#f80); border-radius: 3px; transition: width 0.3s; }
+.dm-stat-row { display: flex; justify-content: space-between; font-size: 12px; color: #a88; gap: 4px; }
+.dm-tag { background: #3a1515; padding: 1px 8px; border-radius: 8px; color: #d99; }
+.dm-score { color: #f80; font-weight: bold; }
+.dm-hint {
+  width: 100%; padding: 24px 16px; margin-bottom: 20px;
+  font-size: 20px; text-align: center; color: #fdd;
+  background: linear-gradient(135deg,#2a1010,#3a1515); border-radius: 14px; line-height: 1.7;
+  font-family: 'STKaiti','KaiTi','楷体',serif; letter-spacing: 1px; border: 1px solid #5a2020;
+}
+.dm-options { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; width: 100%; max-width: 320px; }
+.dm-opt {
+  height: 72px; font-size: 28px; font-family: 'STKaiti','KaiTi','楷体',serif;
+  border: 2px solid #5a2020; border-radius: 12px; background: #1a0808; color: #fcc;
+  cursor: pointer; display: flex; align-items: center; justify-content: center; transition: all 0.15s;
+}
+.dm-opt:active { background: #2a1515; border-color: #f80; }
+.dm-opt-correct { background: #0a2a0a; border-color: #0f0; color: #0f0; }
+.dm-opt-wrong { background: #3a0a0a; border-color: #f00; color: #f00; }
+.dm-opt-dim { opacity: 0.35; }
+.dm-explain {
+  margin-top: 10px; padding: 10px 14px; width: 100%; max-width: 320px;
+  background: #2a1010; border-radius: 10px; font-size: 14px; color: #daa; line-height: 1.6; text-align: center; border: 1px solid #4a2020;
+}
+.dm-result { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 14px; height: 100dvh; text-align: center; }
+.dm-result-title { font-size: 28px; font-weight: bold; color: #f44; }
+.dm-result-score { font-size: 48px; font-weight: 800; color: #f80; }
+.dm-result-bar-wrap { width: 80%; height: 10px; background: #2a1010; border-radius: 5px; overflow: hidden; }
+.dm-result-bar { height: 100%; background: linear-gradient(90deg,#f44,#f80); border-radius: 5px; }
+.dm-result-msg { font-size: 18px; color: #daa; }
+.dm-btn { padding: 12px 32px; border: none; border-radius: 10px; font-size: 16px; cursor: pointer; font-weight: bold; margin-top: 8px; }
+.dm-btn-primary { background: linear-gradient(135deg,#f44,#f80); color: #fff; }
+.dm-btn-primary:active { opacity: 0.8; }
+
+/* === 诗词接龙 styles === */
+.sc-app { display: flex; flex-direction: column; align-items: center; height: 100dvh; padding: 14px; max-width: 420px; margin: 0 auto; position: relative; }
+.sc-header { width: 100%; margin-bottom: 16px; }
+.sc-title { font-size: 22px; font-weight: 800; color: #4a8; text-align: center; }
+.sc-progress { width: 100%; height: 6px; background: #1a3a1a; border-radius: 3px; overflow: hidden; margin: 8px 0; }
+.sc-progress-bar { height: 100%; background: linear-gradient(90deg,#4a8,#8c4); border-radius: 3px; transition: width 0.3s; }
+.sc-stat-row { display: flex; justify-content: space-between; font-size: 12px; color: #6a8; gap: 4px; }
+.sc-tag { background: #1a3a1a; padding: 1px 8px; border-radius: 8px; color: #8c4; }
+.sc-score { color: #fc0; font-weight: bold; }
+.sc-poem-card { width: 100%; padding: 24px 16px; margin-bottom: 16px; background: linear-gradient(135deg,#1a3a1a,#2a4a2a); border-radius: 14px; border: 1px solid #3a5a3a; text-align: center; }
+.sc-upper { font-size: 22px; color: #dfe; line-height: 1.8; font-family: 'STKaiti','KaiTi','楷体',serif; letter-spacing: 3px; }
+.sc-source { margin-top: 10px; font-size: 13px; color: #7a9; font-family: 'STKaiti','KaiTi','楷体',serif; }
+.sc-options { display: flex; flex-direction: column; gap: 10px; width: 100%; max-width: 320px; }
+.sc-opt {
+  height: 52px; font-size: 17px; font-family: 'STKaiti','KaiTi','楷体',serif;
+  border: 2px solid #3a5a3a; border-radius: 10px; background: #0d2a0d; color: #dfe;
+  cursor: pointer; display: flex; align-items: center; justify-content: center; transition: all 0.15s; letter-spacing: 2px;
+}
+.sc-opt:active { background: #1a3a1a; border-color: #4a8; }
+.sc-opt-correct { background: #0a2a0a; border-color: #0f0; color: #0f0; }
+.sc-opt-wrong { background: #3a0a0a; border-color: #f00; color: #f00; }
+.sc-opt-dim { opacity: 0.35; }
+.sc-explain { margin-top: 10px; padding: 10px 14px; width: 100%; max-width: 320px; background: #1a3a1a; border-radius: 10px; font-size: 14px; color: #8c4; line-height: 1.6; text-align: center; border: 1px solid #2a4a2a; font-family: 'STKaiti','KaiTi','楷体',serif; letter-spacing: 1px; }
+.sc-result { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 14px; height: 100dvh; text-align: center; }
+.sc-result-title { font-size: 28px; font-weight: bold; color: #4a8; }
+.sc-result-score { font-size: 48px; font-weight: 800; color: #fc0; }
+.sc-result-bar-wrap { width: 80%; height: 10px; background: #1a3a1a; border-radius: 5px; overflow: hidden; }
+.sc-result-bar { height: 100%; background: linear-gradient(90deg,#4a8,#fc0); border-radius: 5px; }
+.sc-result-msg { font-size: 18px; color: #8c4; }
+.sc-btn { padding: 12px 32px; border: none; border-radius: 10px; font-size: 16px; cursor: pointer; font-weight: bold; margin-top: 8px; }
+.sc-btn-primary { background: linear-gradient(135deg,#4a8,#8c4); color: #fff; }
+.sc-btn-primary:active { opacity: 0.8; }
+
+/* === 诗词填字 styles === */
+.st-app { display: flex; flex-direction: column; align-items: center; height: 100dvh; padding: 14px; max-width: 420px; margin: 0 auto; position: relative; }
+.st-header { width: 100%; margin-bottom: 16px; }
+.st-title { font-size: 22px; font-weight: 800; color: #6ac; text-align: center; }
+.st-progress { width: 100%; height: 6px; background: #0a2a3e; border-radius: 3px; overflow: hidden; margin: 8px 0; }
+.st-progress-bar { height: 100%; background: linear-gradient(90deg,#6ac,#8ef); border-radius: 3px; transition: width 0.3s; }
+.st-stat-row { display: flex; justify-content: space-between; font-size: 12px; color: #5a8; gap: 4px; }
+.st-tag { background: #0a2a3e; padding: 1px 8px; border-radius: 8px; color: #6ac; }
+.st-score { color: #fc0; font-weight: bold; }
+.st-poem-card { width: 100%; padding: 24px 16px; margin-bottom: 16px; background: linear-gradient(135deg,#0a2a3e,#1a3a4e); border-radius: 14px; border: 1px solid #2a4a5e; text-align: center; }
+.st-line { font-size: 22px; color: #def; line-height: 1.8; font-family: 'STKaiti','KaiTi','楷体',serif; letter-spacing: 3px; }
+.st-blank { display: inline-block; width: 28px; height: 28px; border: 2px dashed #6ac; border-radius: 4px; vertical-align: middle; color: transparent; margin: 0 2px; line-height: 24px; }
+.st-blank-correct { border-color: #0f0; color: #0f0; border-style: solid; }
+.st-blank-wrong { border-color: #f00; color: #f00; border-style: solid; }
+.st-source { margin-top: 10px; font-size: 13px; color: #5a8; font-family: 'STKaiti','KaiTi','楷体',serif; }
+.st-options { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; width: 100%; max-width: 280px; }
+.st-opt {
+  height: 72px; font-size: 36px; font-family: 'STKaiti','KaiTi','楷体',serif;
+  border: 2px solid #2a4a5e; border-radius: 12px; background: #0a1a2e; color: #def;
+  cursor: pointer; display: flex; align-items: center; justify-content: center; transition: all 0.15s;
+}
+.st-opt:active { background: #1a3a4e; border-color: #6ac; }
+.st-opt-correct { background: #0a2a1e; border-color: #0f0; color: #0f0; }
+.st-opt-wrong { background: #3a0a0a; border-color: #f00; color: #f00; }
+.st-opt-dim { opacity: 0.35; }
+.st-explain { margin-top: 10px; padding: 10px 14px; width: 100%; max-width: 280px; background: #0a2a3e; border-radius: 10px; font-size: 14px; color: #6ac; line-height: 1.6; text-align: center; border: 1px solid #1a3a4e; font-family: 'STKaiti','KaiTi','楷体',serif; letter-spacing: 1px; }
+.st-result { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 14px; height: 100dvh; text-align: center; }
+.st-result-title { font-size: 28px; font-weight: bold; color: #6ac; }
+.st-result-score { font-size: 48px; font-weight: 800; color: #fc0; }
+.st-result-bar-wrap { width: 80%; height: 10px; background: #0a2a3e; border-radius: 5px; overflow: hidden; }
+.st-result-bar { height: 100%; background: linear-gradient(90deg,#6ac,#fc0); border-radius: 5px; }
+.st-result-msg { font-size: 18px; color: #6ac; }
+.st-btn { padding: 12px 32px; border: none; border-radius: 10px; font-size: 16px; cursor: pointer; font-weight: bold; margin-top: 8px; }
+.st-btn-primary { background: linear-gradient(135deg,#6ac,#8ef); color: #fff; }
+.st-btn-primary:active { opacity: 0.8; }
+
+/* === 脑筋急转弯 styles === */
+.nj-app { display: flex; flex-direction: column; align-items: center; height: 100dvh; padding: 14px; max-width: 420px; margin: 0 auto; position: relative; }
+.nj-header { width: 100%; margin-bottom: 16px; }
+.nj-title { font-size: 22px; font-weight: 800; color: #da5; text-align: center; }
+.nj-progress { width: 100%; height: 6px; background: #1a2e0f; border-radius: 3px; overflow: hidden; margin: 8px 0; }
+.nj-progress-bar { height: 100%; background: linear-gradient(90deg,#da5,#fc4); border-radius: 3px; transition: width 0.3s; }
+.nj-stat-row { display: flex; justify-content: space-between; font-size: 12px; color: #8a5; gap: 4px; }
+.nj-tag { background: #1a2e0f; padding: 1px 8px; border-radius: 8px; color: #da5; }
+.nj-score { color: #fc0; font-weight: bold; }
+.nj-question { width: 100%; padding: 28px 16px; margin-bottom: 20px; background: linear-gradient(135deg,#1a2e0f,#2a3e1a); border-radius: 14px; border: 1px solid #3a4e2a; text-align: center; font-size: 20px; color: #efe; line-height: 1.8; font-family: 'STKaiti','KaiTi','楷体',serif; letter-spacing: 1px; }
+.nj-options { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; width: 100%; max-width: 320px; }
+.nj-opt { height: 48px; font-size: 16px; font-family: 'STKaiti','KaiTi','楷体',serif; border: 2px solid #3a4e2a; border-radius: 10px; background: #0f1a08; color: #efe; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: all 0.15s; letter-spacing: 2px; }
+.nj-opt:active { background: #1a2e0f; border-color: #da5; }
+.nj-opt-correct { background: #0a2a1e; border-color: #0f0; color: #0f0; }
+.nj-opt-wrong { background: #3a0a0a; border-color: #f00; color: #f00; }
+.nj-opt-dim { opacity: 0.35; }
+.nj-explain { margin-top: 10px; padding: 10px 14px; width: 100%; max-width: 320px; background: #1a2e0f; border-radius: 10px; font-size: 14px; color: #da5; line-height: 1.6; text-align: center; border: 1px solid #2a3e1a; font-family: 'STKaiti','KaiTi','楷体',serif; letter-spacing: 1px; }
+.nj-result { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 14px; height: 100dvh; text-align: center; }
+.nj-result-title { font-size: 28px; font-weight: bold; color: #da5; }
+.nj-result-score { font-size: 48px; font-weight: 800; color: #fc0; }
+.nj-result-bar-wrap { width: 80%; height: 10px; background: #1a2e0f; border-radius: 5px; overflow: hidden; }
+.nj-result-bar { height: 100%; background: linear-gradient(90deg,#da5,#fc0); border-radius: 5px; }
+.nj-result-msg { font-size: 18px; color: #da5; }
+.nj-btn { padding: 12px 32px; border: none; border-radius: 10px; font-size: 16px; cursor: pointer; font-weight: bold; margin-top: 8px; }
+.nj-btn-primary { background: linear-gradient(135deg,#da5,#fc4); color: #fff; }
+.nj-btn-primary:active { opacity: 0.8; }
+
+/* === 歇后语闯关 styles === */
+.xhy-app { display: flex; flex-direction: column; align-items: center; height: 100dvh; padding: 14px; max-width: 420px; margin: 0 auto; position: relative; }
+.xhy-header { width: 100%; margin-bottom: 16px; }
+.xhy-title { font-size: 22px; font-weight: 800; color: #e80; text-align: center; }
+.xhy-progress { width: 100%; height: 6px; background: #2a1e0a; border-radius: 3px; overflow: hidden; margin: 8px 0; }
+.xhy-progress-bar { height: 100%; background: linear-gradient(90deg,#e80,#fa4); border-radius: 3px; transition: width 0.3s; }
+.xhy-stat-row { display: flex; justify-content: space-between; font-size: 12px; color: #a82; gap: 4px; }
+.xhy-tag { background: #2a1e0a; padding: 1px 8px; border-radius: 8px; color: #e80; }
+.xhy-score { color: #fc0; font-weight: bold; }
+.xhy-question { width: 100%; padding: 28px 16px; margin-bottom: 20px; background: linear-gradient(135deg,#2a1e0a,#3a2e1a); border-radius: 14px; border: 1px solid #4a3e2a; text-align: center; font-size: 22px; color: #efe; line-height: 1.8; font-family: 'STKaiti','KaiTi','楷体',serif; letter-spacing: 2px; }
+.xhy-question::after { content: '——？'; display: block; margin-top: 10px; font-size: 26px; color: #e80; font-weight: bold; }
+.xhy-options { display: flex; flex-direction: column; gap: 12px; width: 100%; max-width: 320px; }
+.xhy-opt { height: 52px; font-size: 17px; font-family: 'STKaiti','KaiTi','楷体',serif; border: 2px solid #4a3e2a; border-radius: 10px; background: #1a0e08; color: #efe; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: all 0.15s; letter-spacing: 2px; }
+.xhy-opt:active { background: #2a1e0a; border-color: #e80; }
+.xhy-opt-correct { background: #0a2a1e; border-color: #0f0; color: #0f0; }
+.xhy-opt-wrong { background: #3a0a0a; border-color: #f00; color: #f00; }
+.xhy-opt-dim { opacity: 0.35; }
+.xhy-explain { margin-top: 10px; padding: 10px 14px; width: 100%; max-width: 320px; background: #2a1e0a; border-radius: 10px; font-size: 14px; color: #e80; line-height: 1.6; text-align: center; border: 1px solid #3a2e1a; font-family: 'STKaiti','KaiTi','楷体',serif; letter-spacing: 1px; }
+.xhy-result { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 14px; height: 100dvh; text-align: center; }
+.xhy-result-title { font-size: 28px; font-weight: bold; color: #e80; }
+.xhy-result-score { font-size: 48px; font-weight: 800; color: #fc0; }
+.xhy-result-bar-wrap { width: 80%; height: 10px; background: #2a1e0a; border-radius: 5px; overflow: hidden; }
+.xhy-result-bar { height: 100%; background: linear-gradient(90deg,#e80,#fc0); border-radius: 5px; }
+.xhy-result-msg { font-size: 18px; color: #e80; }
+.xhy-btn { padding: 12px 32px; border: none; border-radius: 10px; font-size: 16px; cursor: pointer; font-weight: bold; margin-top: 8px; }
+.xhy-btn-primary { background: linear-gradient(135deg,#e80,#fa4); color: #fff; }
+.xhy-btn-primary:active { opacity: 0.8; }
+
+/* === Wordgame wrapper isolation === */
+.wordgame { width: 100%; }
