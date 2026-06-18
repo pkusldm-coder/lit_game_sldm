@@ -1,5 +1,5 @@
 export const FRUITS = [
-  '🍎', '🍊', '🍋', '🍇', '🍉', '🍓', '🍑', '🍒',
+  '🍎', '🍊', '🍋', '🍇', '🍓', '🫐', '🥝', '🍌', '🍑', '🥭',
 ]
 
 export function getFruit(typeIndex: number): string {
