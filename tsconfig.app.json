@@ -31,8 +31,23 @@
       "@matchgame/*": ["./matchgame/src/*"],
       "@klotski/*": ["./klotski/src/*"],
       "@flowgame/*": ["./flowgame/src/*"],
-      "@nonogram/*": ["./nonogram/src/*"]
+      "@nonogram/*": ["./nonogram/src/*"],
+      "@tetris/*": ["./tetris/src/*"],
+      "@cainizi/*": ["./cainizi/*"],
+      "@dengmi/*": ["./dengmi/*"],
+      "@shici/*": ["./shici/*"],
+      "@shicitian/*": ["./shicitian/*"],
+      "@naojin/*": ["./naojin/*"],
+      "@xiehouyu/*": ["./xiehouyu/*"],
+      "@jungle/*": ["./jungle/src/*"],
+      "@ludo/*": ["./ludo/src/*"],
+      "@checkers/*": ["./checkers/src/*"],
+      "@chess/*": ["./chess/src/*"],
+      "@junqi/*": ["./junqi/src/*"],
+      "@go/*": ["./go/src/*"],
+      "@wordcore/*": ["./core/*"]
     }
   },
-  "include": ["src"]
+  "include": ["src", "cainizi", "dengmi", "shici", "shicitian", "naojin", "xiehouyu", "core", "matchgame/src", "linkgame/src", "gomoku/src", "jungle/src", "ludo/src", "checkers/src", "chess/src", "junqi/src", "go/src", "2048/src", "sudoku/src", "klotski/src", "flowgame/src", "nonogram/src", "tetris/src"],
+  "exclude": ["**/*.test.ts", "**/*.test.tsx", "**/*.spec.ts"]
 }
