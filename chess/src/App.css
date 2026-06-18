@@ -1,0 +1,20 @@
+.chess-app {
+  display: flex; flex-direction: column; align-items: center; min-height: 100dvh; padding: 8px; max-width: 420px; margin: 0 auto; background: #2d1b0e; color: #eee;
+}
+.chess-title { font-size: 36px; font-weight: 800; color: #ffd700; margin-bottom: 12px; }
+.chess-title-sm { font-size: 18px; font-weight: 800; color: #ffd700; }
+.chess-select { width: 100%; background: rgba(0,0,0,0.3); border-radius: 14px; padding: 16px; display: flex; flex-direction: column; gap: 14px; }
+.chess-select h2 { font-size: 18px; color: #ffd700; text-align: center; }
+.chess-section { display: flex; flex-direction: column; gap: 6px; }
+.chess-section label { font-size: 13px; color: #aaa; }
+.chess-btn-group { display: flex; gap: 6px; flex-wrap: wrap; }
+.chess-btn { padding: 8px 14px; border: 2px solid #5a5a5a; border-radius: 8px; background: #3a3a3a; color: #eee; font-size: 14px; cursor: pointer; transition: all 0.15s; font-weight: bold; }
+.chess-btn:active { background: #4a4a4a; }
+.chess-btn.active { border-color: #ffd700; background: #4a3a2a; color: #ffd700; }
+.chess-btn.small { padding: 5px 12px; font-size: 12px; }
+.chess-header { width: 100%; display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px; }
+.chess-turn { font-size: 15px; color: #ccc; margin-bottom: 6px; }
+.chess-board-wrap { border: 3px solid #8b6914; border-radius: 6px; overflow: hidden; }
+.chess-canvas { display: block; max-width: 100%; height: auto; }
+.chess-win { background: rgba(0,0,0,0.75); padding: 20px; border-radius: 14px; text-align: center; margin-top: 12px; }
+.chess-win-text { font-size: 24px; font-weight: bold; margin-bottom: 12px; }

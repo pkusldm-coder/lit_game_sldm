@@ -1,0 +1,25 @@
+.jq-app { display:flex; flex-direction:column; align-items:center; padding:8px; max-width:480px; margin:0 auto; background:#2d1b0e; color:#eee; }
+.jq-title { font-size:36px; font-weight:800; color:#ffd700; margin-bottom:12px; }
+.jq-title-sm { font-size:18px; font-weight:800; color:#ffd700; }
+.jq-select { width:100%; background:rgba(0,0,0,0.3); border-radius:14px; padding:16px; display:flex; flex-direction:column; gap:14px; }
+.jq-select h2 { font-size:18px; color:#ffd700; text-align:center; }
+.jq-section { display:flex; flex-direction:column; gap:6px; }
+.jq-section label { font-size:13px; color:#aaa; }
+.jq-btn-group { display:flex; gap:6px; flex-wrap:wrap; }
+.jq-btn { padding:8px 14px; border:2px solid #5a5a5a; border-radius:8px; background:#3a3a3a; color:#eee; font-size:14px; cursor:pointer; transition:all 0.15s; font-weight:bold; }
+.jq-btn:active { background:#4a4a4a; }
+.jq-btn.active { border-color:#ffd700; background:#4a3a2a; color:#ffd700; }
+.jq-btn.small { padding:5px 12px; font-size:12px; }
+.jq-header { width:100%; display:flex; justify-content:space-between; align-items:center; margin-bottom:6px; }
+.jq-turn { font-size:15px; color:#ccc; margin-bottom:4px; }
+.jq-capture { background:rgba(255,200,0,0.2); border:1px solid #ffd700; border-radius:8px; padding:6px 14px; margin-bottom:4px; font-size:14px; color:#ffd700; }
+.jq-board-wrap { border:3px solid #8b6914; border-radius:6px; }
+.jq-canvas { display:block; max-width:100%; height:auto; }
+.jq-win { background:rgba(0,0,0,0.75); padding:20px; border-radius:14px; text-align:center; margin-top:12px; }
+.jq-win-text { font-size:24px; font-weight:bold; margin-bottom:12px; }
+.jq-overlay { position:fixed; bottom:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.7); display:flex; align-items:center; justify-content:center; z-index:1000; padding:16px; }
+.jq-rules { background:#2d1b0e; border:2px solid #8b6914; border-radius:14px; padding:20px; max-width:380px; width:100%; max-height:90vh; overflow-y:auto; color:#eee; }
+.jq-rules h2 { color:#ffd700; text-align:center; margin-bottom:12px; font-size:20px; }
+.jq-rules-section { margin-bottom:12px; }
+.jq-rules-section h3 { color:#ffd700; font-size:14px; margin-bottom:4px; }
+.jq-rules-section p { font-size:13px; color:#ccc; line-height:1.6; margin-bottom:2px; }

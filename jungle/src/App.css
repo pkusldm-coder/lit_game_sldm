@@ -1,0 +1,172 @@
+.jungle-app {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100dvh;
+  padding: 12px;
+  max-width: 420px;
+  margin: 0 auto;
+  background: #2d5a1e;
+  color: #eee;
+}
+
+.jungle-title {
+  font-size: 36px;
+  font-weight: 800;
+  color: #f7971e;
+  margin-bottom: 16px;
+}
+
+.jungle-title-sm {
+  font-size: 20px;
+  font-weight: 800;
+  color: #f7971e;
+}
+
+.jungle-select {
+  width: 100%;
+  background: rgba(0,0,0,0.3);
+  border-radius: 14px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.jungle-select h2 {
+  font-size: 20px;
+  color: #f7971e;
+  text-align: center;
+}
+
+.jungle-section {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.jungle-section label {
+  font-size: 14px;
+  color: #aaa;
+}
+
+.jungle-btn-group {
+  display: flex;
+  gap: 8px;
+}
+
+.jungle-btn {
+  padding: 10px 20px;
+  border: 2px solid #5a5a5a;
+  border-radius: 10px;
+  background: #3a3a3a;
+  color: #eee;
+  font-size: 15px;
+  cursor: pointer;
+  transition: all 0.15s;
+  font-weight: bold;
+}
+
+.jungle-btn:active {
+  background: #4a4a4a;
+  border-color: #f7971e;
+}
+
+.jungle-btn.active {
+  border-color: #f7971e;
+  background: #4a3a2a;
+  color: #f7971e;
+}
+
+.jungle-btn.small {
+  padding: 6px 14px;
+  font-size: 13px;
+}
+
+.jungle-rules {
+  background: rgba(0,0,0,0.2);
+  border-radius: 10px;
+  padding: 12px 16px;
+  font-size: 13px;
+  color: #aaa;
+  line-height: 1.8;
+}
+
+.jungle-rules h3 {
+  font-size: 14px;
+  color: #f7971e;
+  margin-bottom: 6px;
+}
+
+.jungle-header {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.jungle-board-wrap {
+  position: relative;
+  border: 3px solid #5a5a3a;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.jungle-canvas {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+.jungle-thinking {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(0,0,0,0.7);
+  color: #f7971e;
+  padding: 12px 24px;
+  border-radius: 10px;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.jungle-info {
+  width: 100%;
+  margin-top: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  align-items: center;
+}
+
+.jungle-turn {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.jungle-pieces-info {
+  font-size: 13px;
+  color: #aaa;
+}
+
+.jungle-actions {
+  display: flex;
+  gap: 10px;
+}
+
+.jungle-win-overlay {
+  background: rgba(0,0,0,0.7);
+  padding: 20px;
+  border-radius: 14px;
+  text-align: center;
+  margin-top: 12px;
+}
+
+.jungle-win-text {
+  font-size: 24px;
+  font-weight: bold;
+  color: #f7971e;
+  margin-bottom: 12px;
+}
