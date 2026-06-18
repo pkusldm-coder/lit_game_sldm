@@ -8,7 +8,12 @@ interface LevelSelectProps {
   onClose: () => void
 }
 
-const DIFFICULTY_LABELS = ['简单', '普通', '中等', '困难', '专家']
+const DIFFICULTY_TIERS = ['简单', '普通', '中等', '困难', '专家']
+
+function getDifficulty(index: number, total: number): string {
+  const idx = Math.floor((index / total) * DIFFICULTY_TIERS.length)
+  return DIFFICULTY_TIERS[Math.min(idx, DIFFICULTY_TIERS.length - 1)]
+}
 
 const LevelSelect: FC<LevelSelectProps> = ({ currentIndex, onSelect, onClose }) => (
   <div className="fg-level-overlay" onClick={onClose}>
@@ -24,7 +29,7 @@ const LevelSelect: FC<LevelSelectProps> = ({ currentIndex, onSelect, onClose }) 
             <span className="fg-level-item-num">{i + 1}</span>
             <span className="fg-level-item-name">{level.name}</span>
             <span className="fg-level-item-size">{level.gridSize}×{level.gridSize}</span>
-            <span className="fg-level-item-diff">{DIFFICULTY_LABELS[i] || ''}</span>
+            <span className="fg-level-item-diff">{getDifficulty(i, LEVELS.length)}</span>
           </button>
         ))}
       </div>

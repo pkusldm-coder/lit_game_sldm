@@ -253,8 +253,19 @@ export default function App() {
         ctx.lineWidth = 1
         ctx.stroke()
 
+        // Win line stone ring
+        const isWinStone = winLine && winLine.some(([wr, wc]) => wr === r && wc === c)
+        if (isWinStone) {
+          ctx.strokeStyle = '#ff0'
+          ctx.lineWidth = 3
+          ctx.beginPath()
+          ctx.arc(x, y, STONE_RADIUS + 2, 0, Math.PI * 2)
+          ctx.stroke()
+          ctx.lineWidth = 1
+        }
+
         // Last move marker
-        if (lastMove && lastMove.row === r && lastMove.col === c) {
+        if (lastMove && lastMove.row === r && lastMove.col === c && !isWinStone) {
           ctx.fillStyle = stone === 'black' ? '#ff0' : '#f00'
           ctx.beginPath()
           ctx.arc(x, y, 4, 0, Math.PI * 2)
@@ -353,6 +364,17 @@ export default function App() {
           onMouseLeave={() => setHoverPos(null)}
         />
         {thinking && <div className="thinking-overlay">AI 思考中...</div>}
+        {winner && (
+          <div className="win-overlay">
+            <div className="win-text">
+              {gameMode === 'ai'
+                ? (winner === playerStone ? '🎉 你赢了！' : '😢 你输了！')
+                : `🏆 ${winner === 'black' ? '黑棋' : '白棋'} 获胜！`
+              }
+            </div>
+            <button className="btn" onClick={resetGame}>再来一局</button>
+          </div>
+        )}
       </div>
 
       <div className="game-info">

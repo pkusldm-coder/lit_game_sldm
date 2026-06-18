@@ -8,14 +8,10 @@ interface LevelSelectProps {
   onClose: () => void
 }
 
-const DIFFICULTY: Record<number, string> = {
-  0: '简单',
-  1: '简单',
-  2: '中等',
-  3: '中等',
-  4: '困难',
-  5: '困难',
-  6: '大师',
+const DIFFICULTY_TIERS = ['简单', '简单', '中等', '中等', '困难', '困难', '大师']
+
+function getDifficulty(index: number): string {
+  return DIFFICULTY_TIERS[index] || '大师'
 }
 
 const LevelSelect: FC<LevelSelectProps> = ({ currentIndex, onSelect, onClose }) => {
@@ -32,7 +28,7 @@ const LevelSelect: FC<LevelSelectProps> = ({ currentIndex, onSelect, onClose }) 
             >
               <span className="kl-level-item-num">{i + 1}</span>
               <span className="kl-level-item-name">{level.name}</span>
-              <span className="kl-level-item-diff">{DIFFICULTY[i] || '大师'}</span>
+              <span className="kl-level-item-diff">{getDifficulty(i)}</span>
               <span className="kl-level-item-moves">{level.moves}步</span>
             </button>
           ))}
